@@ -1,0 +1,9 @@
+.nav {
+  /* /* display: flex; */
+  background-color: rgb(136, 136, 243);
+}
+.nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
