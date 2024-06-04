@@ -9,8 +9,6 @@ import CityList from "./Components/CityList";
 import CountryList from "./Components/CountryList";
 import City from "./Components/City";
 import Form from "./Components/Form";
-import { useState } from "react";
-import { useEffect } from "react";
 import { Navigate } from "react-router-dom";
 import { CitiesProvider } from "./contexts/CitiesContext.jsx";
 
