@@ -17,6 +17,7 @@ import { useUrlPosition } from "../hooks/useUrlPosition"; // Correct import stat
 
 function Map() {
   const navigate = useNavigate();
+
   const { cities } = useCities();
   const [mapPosition, setMapPosition] = useState([40, 0]);
   const {

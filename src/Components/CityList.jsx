@@ -3,13 +3,16 @@ import Spinner from "./Spinner";
 import CityItem from "./CityItem";
 import Message from "./Message";
 import { useCities } from "../contexts/CitiesContext";
+
 function CityList() {
   const { cities, isLoading } = useCities();
+
   if (isLoading) return <Spinner />;
   if (!cities.length)
     return (
-      <Message message="Add your Cites to explore by clicking on the ctiy map" />
+      <Message message="Add your cities to explore by clicking on the city map" />
     );
+
   return (
     <ul className={styles.cityList}>
       {cities.map((city) => (
