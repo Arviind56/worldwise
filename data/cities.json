@@ -1,63 +1,15 @@
 {
   "cities": [
     {
-      "cityName": "Lisbon",
+      "id": "b36c",
+      "cityName": "Europe/Lisbon",
       "country": "Portugal",
       "emoji": "🇵🇹",
-      "date": "2027-10-31T15:59:59.138Z",
-      "notes": "My favorite city so far!",
+      "date": "2024-12-27T07:17:37.427Z",
+      "notes": "what are the notes for the same with respect to the natural areas\n",
       "position": {
-        "lat": 38.727881642324164,
-        "lng": -9.140900099907554
-      },
-      "id": "73930385"
-    },
-    {
-      "cityName": "Madrid",
-      "country": "Spain",
-      "emoji": "🇪🇸",
-      "date": "2027-07-15T08:22:53.976Z",
-      "notes": "",
-      "position": {
-        "lat": 40.46635901755316,
-        "lng": -3.7133789062500004
-      },
-      "id": "17806751"
-    },
-    {
-      "cityName": "Berlin",
-      "country": "Germany",
-      "emoji": "🇩🇪",
-      "date": "2027-02-12T09:24:11.863Z",
-      "notes": "Amazing 😃",
-      "position": {
-        "lat": 52.53586782505711,
-        "lng": 13.376933665713324
-      },
-      "id": "98443197"
-    },
-    {
-      "cityName": "Coimbatore",
-      "country": "India",
-      "emoji": "IN",
-      "date": "2024-07-17T23:43:04.896Z",
-      "notes": "test",
-      "position": {
-        "lat": "10.894531234077883",
-        "lng": "77.01705124605289"
-      },
-      "id": "4f2c"
-    },
-    {
-      "id": "b807",
-      "cityName": "Pollachi",
-      "country": "India",
-      "emoji": "🇮🇳",
-      "date": "2024-07-18T12:23:53.911Z",
-      "notes": "",
-      "position": {
-        "lat": "10.844822046561521",
-        "lng": "77.02099290340429"
+        "lat": "38.981672369146764",
+        "lng": "-9.59079120750637"
       }
     }
   ]

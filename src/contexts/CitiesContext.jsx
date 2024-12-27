@@ -1,8 +1,12 @@
-import { useContext } from "react";
-import { createContext, useState, useEffect } from "react";
+import { useContext, createContext, useState, useEffect } from "react";
 
 const CitiesContext = createContext();
 const Base_URL = "http://localhost:8000";
+const initalState = {
+  cities: [],
+  isLoading: false,
+  currentCity: {},
+};
 
 function CitiesProvider({ children }) {
   const [cities, setCities] = useState([]);
@@ -37,7 +41,8 @@ function CitiesProvider({ children }) {
       setIsLoading(false);
     }
   }
-  // to create the new city using the foem section
+
+  // To create a new city using the form section
   async function createCity(newCity) {
     try {
       setIsLoading(true);
@@ -48,26 +53,51 @@ function CitiesProvider({ children }) {
       });
       const data = await res.json();
       console.log(data);
+      setCities((cities) => [...cities, data]);
       setcurrentCity(data);
     } catch {
-      alert("There was an error loading data...");
+      alert("There was an error creating the city...");
     } finally {
       setIsLoading(false);
     }
   }
+
+  async function deleteCity(id) {
+    try {
+      setIsLoading(true);
+      const res = await fetch(`${Base_URL}/cities/${id}`, {
+        method: "DELETE",
+      });
+      setCities((cities) => cities.filter((city) => city.id !== id));
+      setcurrentCity({});
+    } catch {
+      alert("There was an error deleting the city...");
+    } finally {
+      setIsLoading(false);
+    }
+  }
+
   return (
     <CitiesContext.Provider
-      value={{ cities, isLoading, currentCity, getCity, createCity }}
+      value={{
+        cities,
+        isLoading,
+        currentCity,
+        getCity,
+        createCity,
+        deleteCity,
+      }}
     >
       {children}
     </CitiesContext.Provider>
   );
 }
+
 function useCities() {
   const context = useContext(CitiesContext);
   if (context === undefined)
-    throw new Error("Cities was used outside the Cities Provider");
+    throw new Error("useCities must be used within a CitiesProvider");
   return context;
 }
 
-export { CitiesContext, CitiesProvider, useCities };
+export { CitiesProvider, useCities };
